@@ -99,6 +99,7 @@ class OriginalVideoDialog(QMainWindow):
         self.playButton.setEnabled(False)
         self.errorLabel.setText("Error: " + self.mediaPlayer.errorString())
 
+
     def exit_call(self):
         self.close()
 
@@ -225,7 +226,7 @@ class AvanosUi(QWidget):
     def open_file_name_dialog(self):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
-        file_name, _ = QFileDialog.getOpenFileName(self, "Select a video file", "", "MOV Files (*.mov)", options=options)
+        file_name, _ = QFileDialog.getOpenFileName(self, "Select a video file", "", "MP4 Files (*.mp4)", options=options)
         if file_name and file_name is not '':
             print('Opening ' + file_name)
             self.original_video_dialog.open_file_for_playing(file_name)
