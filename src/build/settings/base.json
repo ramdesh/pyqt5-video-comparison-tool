@@ -1,0 +1,6 @@
+{
+    "app_name": "Avanos Video Processor",
+    "author": "Virtusa Corporation",
+    "main_module": "src/main/python/main.py",
+    "version": "0.0.0"
+}
