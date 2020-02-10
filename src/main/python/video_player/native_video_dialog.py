@@ -5,7 +5,7 @@ from PyQt5.QtMultimedia import QMediaContent, QMediaPlayer
 from PyQt5.QtMultimediaWidgets import QVideoWidget
 
 
-class VideoDialog(QMainWindow):
+class NativeVideoDialog(QMainWindow):
     def __init__(self):
         super().__init__()
         self.mediaPlayer = QMediaPlayer(None, QMediaPlayer.VideoSurface)

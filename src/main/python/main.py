@@ -2,10 +2,11 @@ from fbs_runtime.application_context.PyQt5 import ApplicationContext
 from PyQt5.QtWidgets import *
 import sys
 
-from video_player.video_dialog import VideoDialog
+from video_player.native_video_dialog import NativeVideoDialog
+from video_player.vlc_video_dialog import VlcVideoDialog
 
 
-class OriginalVideoDialog(VideoDialog):
+class OriginalVideoDialog(VlcVideoDialog):
     def __init__(self):
         super().__init__()
         self.title = 'Original Video'
@@ -18,7 +19,7 @@ class OriginalVideoDialog(VideoDialog):
         self.setGeometry(self.left, self.top, self.width, self.height)
 
 
-class ProcessedVideoDialog(VideoDialog):
+class ProcessedVideoDialog(VlcVideoDialog):
     def __init__(self):
         super().__init__()
         self.title = 'Processed Video'
