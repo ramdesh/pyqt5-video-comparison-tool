@@ -10,7 +10,7 @@ class OriginalVideoDialog(VideoDialog):
         super().__init__()
         self.title = 'Original Video'
         self.left = 500
-        self.top = 10
+        self.top = 100
         self.width = 640
         self.height = 480
 
@@ -23,7 +23,7 @@ class ProcessedVideoDialog(VideoDialog):
         super().__init__()
         self.title = 'Processed Video'
         self.left = 1000
-        self.top = 10
+        self.top = 100
         self.width = 640
         self.height = 480
 
