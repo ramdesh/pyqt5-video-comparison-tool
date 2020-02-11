@@ -87,6 +87,8 @@ class VlcVideoDialog(QMainWindow):
             self.timer.stop()
         else:
             if self.mediaplayer.play() == -1:
+                self.playButton.setIcon(
+                    self.style().standardIcon(QStyle.SP_MediaPlay))
                 return
 
             self.mediaplayer.play()
