@@ -2,7 +2,6 @@ from fbs_runtime.application_context.PyQt5 import ApplicationContext
 from PyQt5.QtWidgets import *
 import sys
 
-from video_player.native_video_dialog import NativeVideoDialog
 from video_player.vlc_video_dialog import VlcVideoDialog
 
 
@@ -56,29 +55,6 @@ class AvanosUi(QWidget):
 
     def on_submit_video_button_clicked(self):
         self.open_file_name_dialog()
-
-    def open_file_name_dialog(self):
-        options = QFileDialog.Options()
-        options |= QFileDialog.DontUseNativeDialog
-        file_name, _ = QFileDialog.getOpenFileName(self, "Select a video file", "", "MP4 Files (*.mp4)", options=options)
-        if file_name and file_name is not '':
-            print('Opening ' + file_name)
-            self.original_video_dialog.open_file_for_playing(file_name)
-            self.original_video_dialog.show()
-
-    def open_file_names_dialog(self):
-        options = QFileDialog.Options()
-        options |= QFileDialog.DontUseNativeDialog
-        files, _ = QFileDialog.getOpenFileNames(self, "QFileDialog.getOpenFileNames()", "", "All Files (*);;Python Files (*.py)", options=options)
-        if files:
-            print(files)
-
-    def save_file_dialog(self):
-        options = QFileDialog.Options()
-        options |= QFileDialog.DontUseNativeDialog
-        file_name, _ = QFileDialog.getSaveFileName(self, "QFileDialog.getSaveFileName()", "", "All Files (*);;Text Files (*.txt)", options=options)
-        if file_name:
-            print(file_name)
 
 
 if __name__ == '__main__':
