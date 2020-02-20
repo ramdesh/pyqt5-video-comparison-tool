@@ -121,7 +121,7 @@ class VlcVideoDialog(QMainWindow):
         elif platform.system() == "Darwin": # for MacOS
             self.mediaplayer.set_nsobject(int(self.videoframe.winId()))
 
-        self.play_pause()
+        # self.play_pause()
 
     def set_volume(self, volume):
         """Set the volume
