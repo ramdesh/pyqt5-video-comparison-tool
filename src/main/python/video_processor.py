@@ -7,6 +7,13 @@ from model.predict import *
 
 class VideoProcessor:
     def __init__(self, video_path):
+        dir_path = os.getcwd()
+        self.clear_files(dir_path + "/images/frames/")
+        self.clear_files(dir_path + "/images/predicted/")
+        self.clear_files(dir_path + "/images/mask_predicted/asm/")
+        self.clear_files(dir_path + "/images/mask_predicted/scm/")
+        self.clear_files(dir_path + "/images/mask_predicted/bp/")
+        self.clear_files(dir_path + "/images/mask_predicted/msm/")
         self.start_time = datetime.now()
         self.extract_images(video_path)
 
@@ -70,6 +77,12 @@ class VideoProcessor:
         self.clear_files(dir_path + "/images/mask_predicted/scm/")
         self.clear_files(dir_path + "/images/mask_predicted/bp/")
         self.clear_files(dir_path + "/images/mask_predicted/msm/")
+        self.create_placeholer(dir_path + "/images/frames/")
+        self.create_placeholer(dir_path + "/images/predicted/")
+        self.create_placeholer(dir_path + "/images/mask_predicted/asm/")
+        self.create_placeholer(dir_path + "/images/mask_predicted/scm/")
+        self.create_placeholer(dir_path + "/images/mask_predicted/bp/")
+        self.create_placeholer(dir_path + "/images/mask_predicted/msm/")
         return dir_path + '/output.avi'
 
     def clear_files(self, mydir):
@@ -78,3 +91,7 @@ class VideoProcessor:
         filelist = [f for f in os.listdir(mydir) if f.endswith(".png")]
         for f in filelist:
             os.remove(os.path.join(mydir, f))
+
+    def create_placeholer(self, mydir):
+        with open(mydir + '/placeholder.png', 'w'):
+            pass
