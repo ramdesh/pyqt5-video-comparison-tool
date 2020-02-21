@@ -10,7 +10,7 @@ class OriginalVideoDialog(VlcVideoDialog):
     def __init__(self):
         super().__init__()
         self.title = 'Original Video'
-        self.left = 200
+        self.left = 100
         self.top = 100
         self.width = 640
         self.height = 480
